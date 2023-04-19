@@ -1,0 +1,169 @@
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.item {
+	width: 90%;
+	height: 160rpx;
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(255, 207, 207, 0.15);
+	margin-bottom: 20rpx;
+border-radius: 10px;
+	align-items: center;
+	padding-left: 8rpx;
+	padding-right: 8rpx;
+}
+
+.pic {
+	width: 130rpx;
+	height: 102rpx;
+	margin-right: 16rpx;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.aiyou {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28rpx;
+	line-height: 50rpx;
+	/* identical to box height, or 180% */
+
+
+	color: #000000;
+}
+
+.price {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 40rpx;
+	line-height: 50rpx;
+	/* identical to box height, or 126% */
+
+
+	color: #F05755;
+
+}
+
+.price2 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 40rpx;
+	line-height: 50rpx;
+	/* identical to box height, or 126% */
+
+
+	color: #F05755;
+
+}
+.ds_view {
+	width: 102rpx;
+	height: 54rpx;
+
+	background: linear-gradient(85.67deg, #FD8D8D 1.74%, #F05755 117.07%);
+	box-shadow: 0rpx 10rpx 50rpx rgba(240, 87, 85, 0.24);
+	border-radius: 50rpx;
+	margin-right: 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ds {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28rpx;
+	text-align: center;
+	line-height: 50rpx;
+	/* identical to box height, or 180% */
+
+
+	color: #FFFFFF;
+
+}
+.win_border {
+	width: 644rpx;
+	margin: auto;
+	height: 414rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	align-items: center;
+	border-radius: 20rpx;
+}
+
+.w_top {
+	width: 100%;
+	height: 140rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.w_title {
+	font-weight: 500;
+	font-size: 36rpx;
+
+	color: #000000;
+
+}
+
+.del {
+	width: 28rpx;
+	height: 28rpx;
+	position: absolute;
+	right: 40rpx;
+}
+
+.w_view {
+	width: 586rpx;
+	height: 100rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #F4F5F9;
+	border-radius: 6rpx;
+}
+
+.userName {
+	font-weight: 400;
+	font-size: 28rpx;
+text-align: center;
+
+	color: #333333;
+}
+
+.userName-place {
+	font-weight: 400;
+	font-size: 28rpx;
+
+
+	color: #918E8E;
+}
+
+.but {
+	width: 586rpx;
+	height: 74rpx;
+	background: linear-gradient(90.2deg, #487FE6 -28.78%, #487FE6 197.29%);
+	border-radius: 8rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 56rpx;
+}
+
+.sure {
+	font-size: 30rpx;
+	color: #FFFFFF;
+}

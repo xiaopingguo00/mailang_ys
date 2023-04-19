@@ -1,0 +1,42 @@
+<view class="wrapper">
+	<view class="top-border">
+		<view class="top_border_col1">
+			<!-- <image class="bg2"  src="../../images/new/c_bg2.png"></image> -->
+			<view class="bg2">
+
+			</view>
+			<image class="code" src="{{singer.userPic==''?'../../images/new/renwu.png':singer.userPic}}"></image>
+			<view class="right_col">
+				<view class="name_row">
+					<text class="name">{{singer.userNickname}}</text>
+				</view>
+				<text class="intro">{{singer.memberDTO.code==1?'会员有效期：'+singer.memberDTO.endTime:'当前还不是会员哦~'}}
+				</text>
+			</view>
+			<image wx:if="{{singer.memberDTO.code==1}}" class="c_vip" src="../../images/new/c_vip.png"></image>
+		</view>
+		<view class="ziliao_border">
+			<text class="ziliao">会员选择</text>
+		</view>
+	</view>
+	<view class="out">
+		<view bindtap="chooseVip" class="{{choose?' inner':'inner2'}}">
+			<view class="inner_left_col">
+				<text class="vip2">年度会员</text>
+				<text class="des">开通会员免抽佣(点歌、打赏、信息查看)</text>
+			</view>
+			<text class="n2">￥</text>
+			<text class="n1">98</text>
+		</view>
+		<image wx:if="{{choose}}" class="gou" src="../../images/new/c_gou.png"></image>
+	</view>
+	<view class="vip_border">
+		<text class="ziliao">非会员</text>
+	</view>
+	<view class="ss_border">
+		<text class="des2">用户每次点歌,查看歌手联系方式,<text class="des3">收取15%的费用</text></text>
+	</view>
+	<view bindtap="doPay" class="bottom_view">
+		<text class="open2">{{singer.memberDTO.code==1?'立即续费':'立即开通'}}</text>
+	</view>
+</view>

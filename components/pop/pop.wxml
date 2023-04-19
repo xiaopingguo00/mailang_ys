@@ -1,0 +1,11 @@
+<view wx:if="{{isShow}}" bindtap="close" class="tip-area">
+	<view catchtap="hideClick" class="dialog-content">
+		<!-- <view class="tip-content">
+      {{contentStr}}
+    </view>
+    <view class="btn-content">
+      {{btnStr}}
+		</view> -->
+		<slot></slot>
+	</view>
+</view>

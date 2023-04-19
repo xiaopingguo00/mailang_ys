@@ -1,0 +1,59 @@
+{
+	"pages": [
+		"pages/home/index",
+		"pages/welcome/welcome",
+		"pages/guide/guide",
+		"pages/me/me",
+		"pages/bangdan/bangdan",
+		"pages/buy_vip/buy_vip",
+		"pages/my_money/my_money",
+		"pages/money_list/money_list",
+		"pages/gedan/gedan",
+		"pages/add_song/add_song",
+		"pages/shop_edit/shop_edit",
+		"pages/singer_edit/singer_edit",
+		"pages/audience-choose-song/index",
+		"pages/dashang/dashang",
+		"pages/singer_info/singer_info",
+		"pages/singer_list/singer_list",
+		"pages/shop_money/shop_money"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "小麦点歌",
+		"navigationBarTextStyle": "black",
+		"onReachBottomDistance": 50
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json",
+	"tabBar": {
+		"custom": true,
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"iconPath": "images/new/c_home1.png",
+				"selectedIconPath": "images/new/c_home2.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/bangdan/bangdan",
+				"iconPath": "images/new/c_bang1.png",
+				"selectedIconPath": "images/new/c_bang2.png",
+				"text": "排行榜"
+			},
+			{
+				"pagePath": "pages/singer_list/singer_list",
+				"iconPath": "images/new/c_bang1.png",
+				"selectedIconPath": "images/new/c_bang2.png",
+				"text": "商演歌手"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"iconPath": "images/new/c_me1.png",
+				"selectedIconPath": "images/new/c_me2.png",
+				"text": "我的"
+			}
+		]
+	}
+}

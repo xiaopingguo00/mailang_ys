@@ -1,0 +1,44 @@
+<view class="wrapper2">
+	<view class="top_bg">
+		<view class="type_view">
+			<picker class="sex-picker" bindchange="bindTypePickerChange" value="{{typeIndex}}" range="{{typeArray}}">
+				<text class="title">{{typeIndex==0?'歌手类型':typeArray[typeIndex]}}</text>
+			</picker>
+			<image src="../../images/new/down.png" class="down" mode="aspectFit" />
+		</view>
+		<view class="type_view" style="margin-left: 20rpx;">
+			<picker class="sex-picker" bindchange="bindSexPickerChange" value="{{sexIndex}}" range="{{sexArray}}">
+				<text class="title2">{{sexIndex==0?'性别':sexArray[sexIndex]}}</text>
+			</picker>
+			<image src="../../images/new/down.png" class="down" mode="aspectFit" />
+		</view>
+		<view class="type_view" style="margin-left: 20rpx;">
+			<picker class="sex-picker" mode="region" bindchange="setHome" value="{{region}}">
+				<text class="title">{{province!=""? city:'城市'}}</text>
+			</picker>
+			<image src="../../images/new/down.png" class="down" mode="aspectFill" />
+		</view>
+	</view>
+	<view class="tianc">
+	</view>
+	<view wx:for="{{dataList}}">
+		<view bindtap="todetail" data-index="{{index}}" class="top-border">
+			<view class="{{index==0?'top_border_col1':index==1?'top_border_col2':index==2?'top_border_col3':'top_border_col4'}}">
+				<image class="code" src="{{item.userPic}}" mode="aspectFill"></image>
+				<view class="right_col">
+					<view class="name_row">
+						<text class="name">{{item.userNickname}}</text>
+						<image class="sex2" src="{{item.userSex==1?'../../images/new/c_male.png':'../../images/new/c_female.png'}}"></image>
+						<view wx:if="{{item.userCity !=''&&item.userCity!=null}}" class="diqu">
+							<text class="xz1">{{item.userCity}}</text>
+						</view>
+					</view>
+					<text class="intro">乐器:{{item.musical}}
+					</text>
+					<text class="words">{{item.words}}
+					</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

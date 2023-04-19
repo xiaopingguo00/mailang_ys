@@ -1,0 +1,46 @@
+<view class="wrapper">
+	<view class="tab_view">
+		<view bindtap="changeTab" data-status="0" class="sj_view">
+			<view wx:if="{{status==0}}" class="blue">
+			</view>
+			<text>已上架</text>
+		</view>
+		<view class="sj_view" bindtap="changeTab" data-status="1" style="margin-left:30rpx">
+			<view wx:if="{{status==1}}" class="blue">
+			</view>
+			<text>已下架</text>
+		</view>
+		<view style="flex:1;height:10rpx"></view>
+		<image bindtap="addSong" class="add" src="../../images/new/c_add.png"></image>
+	</view>
+	<view style="margin-top:24rpx"></view>
+	<view class="search">
+		<image src="../../images/new/search.png" mode="aspectFill" style="width: 45rpx;height: 45rpx;margin-left: 20rpx;" />
+		<input bindconfirm="searchsong" bindinput="inputname" type="text" placeholder="请输入歌名" class="search_text"/>
+	</view>
+	<view style="margin-top:24rpx"></view>
+	<block wx:for="{{dataList}}">
+		<view class="row2">
+			<text class="index">{{index+1}}</text>
+			<view class="col1">
+				<view class="row2">
+					<text class="text0">{{item.name}}</text>
+				</view>
+				<view class="row2">
+					<text class="text4">{{item.singerName}}</text>
+					<view wx:if="{{item.songType==1}}" class="state1">
+						<text class="text1">原创</text>
+					</view>
+					<view class="state2" style="margin-left:20rpx">
+						<text class="text2">推荐值{{item.sortnum}}</text>
+					</view>
+					<view class="state3" style="margin-left:20rpx">
+						<text class="text3">{{item.songClass}}</text>
+					</view>
+				</view>
+			</view>
+			<image class="edit" bindtap="editSong" data-id="{{item.id}}" src="../../images/new/c_edit.png"></image>
+			<image class="del" bindtap="deleteSong" data-index="{{index}}" data-id="{{item.id}}" src="../../images/new/c_del.png"></image>
+		</view>
+	</block>
+</view>

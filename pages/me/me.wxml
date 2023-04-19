@@ -1,0 +1,38 @@
+<view class="wrapper">
+	<view class="top-border">
+		<view class="top_border_col1">
+			<image class="code" src="{{headImg}}"></image>
+			<view class="right_col">
+				<view class="name_row">
+					<text class="name">{{userNickname}}</text>
+					<image class="sex" src="{{sex==2?'../../images/new/c_female.png':'../../images/new/c_male.png'}}"></image>
+				</view>
+				<view wx:if="{{address!=''}}" class="name_row">
+					<view class="diqu">
+						<text class="xz1">{{address}}</text>
+					</view>
+				</view>
+				<text class="intro">{{words!=""&&words!=null?words:'Ta 还没有介绍过自己哟'}}
+				</text>
+			</view>
+		</view>
+		<view class="top_border_col2">
+			<image class="bg1" src="../../images/new/c_bg5.png"></image>
+			<view class="vip_inner">
+				<image wx:if="{{code==1}}" class="hg" src="../../images/new/hg.png"></image>
+				<text  wx:if="{{code==1}}" class="youxaioqi">会员有效期：{{user.memberDTO.endTime}}</text>
+				<text  wx:if="{{code!=1}}" class="youxaioqi2">开通会员年卡，专享产品权益</text>
+				<view bindtap="openvip" class="open">
+					<text class="open1"> {{code==1?'查看会员':'立即开通'}} </text>
+				</view>
+			</view>
+
+		</view>
+		<view wx:if="{{userType!=0}}" bindtap="toInfoPage" class="ziliao_border">
+			<text class="ziliao">{{userType==1?'歌手资料':'商家资料'}}</text>
+			<view class="tip"></view>
+			<text class="wirte">去填写</text>
+			<image class="right" src="../../images/new/right.png"></image>
+		</view>
+	</view>
+</view>

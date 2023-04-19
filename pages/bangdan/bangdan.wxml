@@ -1,0 +1,33 @@
+<view class="wrapper2">
+	<view class="top_bg">
+		<image class="top_bg" src="../../images/new/c_bg1.png"></image>
+	</view>
+	<view bindtap="toDetail" data-index="{{index}}" wx:for="{{dataList}}">
+		<view class="top-border">
+			<view class="{{index==0?'top_border_col1':index==1?'top_border_col2':index==2?'top_border_col3':'top_border_col4'}}">
+				<image class="code" src="{{item.userPic}}"></image>
+				<view class="right_col">
+					<view class="name_row">
+						<text class="name">{{item.userNickname}}</text>
+						<view class="diqu">
+							<text class="xz1">{{item.userCity}}</text>
+						</view>
+
+					</view>
+					<text class="intro">点歌次数 {{item.songNum}}
+					</text>
+				</view>
+			</view>
+			<view class="no">
+				<image wx:if="{{index==0}}" class="no1" src="../../images/new/yellow_bg.png"></image>
+				<image wx:elif="{{index==1}}" class="no1" src="../../images/new/blue_bg.png"></image>
+				<image wx:elif="{{index==2}}" class="no1" src="../../images/new/red_bg.png"></image>
+				<image wx:else class="no1" src="../../images/new/grey_bg.png"></image>
+				<text class="no2">{{index+1}}</text>
+			</view>
+		</view>
+	</view>
+	<view style="height: 100rpx;width: 1rpx;">
+
+	</view>
+</view>

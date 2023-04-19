@@ -1,0 +1,339 @@
+page {
+	background-color: '#fff';
+}
+
+.wrapper2 {
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	flex-direction: column;
+}
+
+.top_border_col1 {
+	height: 214rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.top_border_col2 {
+	height: 214rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.top_border_col3 {
+	height: 214rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.top_border_col4 {
+	height: 214rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.top-border {
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	color: aquamarine;
+	flex-direction: column;
+	align-items: center;
+}
+
+.top-border2 {
+	display: flex;
+	width: 100%;
+	height: 100rpx;
+	color: aquamarine;
+	margin-top: 20rpx;
+	flex-direction: column;
+	align-items: center;
+}
+
+.code {
+	margin-top: 10rpx;
+	width: 140rpx;
+	height: 140rpx;
+	border-radius: 8rpx;
+	margin-left: 60rpx;
+	flex-shrink: 0;
+}
+
+.no {
+	position: absolute;
+	left: 0rpx;
+}
+
+.bg1 {
+	height: 128rpx;
+	position: absolute;
+	width: 100%-5rpx;
+}
+
+.open {
+	width: 168rpx;
+	height: 56rpx;
+	background-color: #CDAC8D;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 28rpx;
+	position: absolute;
+	right: 45rpx;
+}
+
+.open1 {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28rpx;
+	/* identical to box height, or 143% */
+
+
+	color: #373535;
+}
+
+.right_col {
+	width: max-content;
+	margin-right: 20rpx;
+	/* background:red; */
+	height: 150rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 30rpx;
+}
+
+.name_row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.name {
+	font-size: 36rpx;
+	color: #000000;
+	max-width: 250rpx;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.xz {
+	width: fit-content;
+	height: fit-content;
+	padding: 4rpx 8rpx;
+	display: flex;
+	background-color: #FF6619;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.diqu {
+	width: fit-content;
+	height: fit-content;
+	padding: 4rpx 20rpx;
+	display: flex;
+	margin-left: 12rpx;
+	background-color: #ECF5FF;
+	align-items: center;
+	justify-content: center;
+	border-radius: 200rpx;
+}
+
+.xz1 {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24rpx;
+	line-height: 34rpx;
+	color: #409EFF;
+	text-overflow: ellipsis;
+	max-width: 200rpx;
+	overflow: hidden;
+	white-space: nowrap;
+
+}
+
+.sex2 {
+	margin-left: 20rpx;
+	height: 34rpx;
+	width: 34rpx;
+	margin-right: 12rpx;
+	flex-shrink: 0;
+}
+
+.words {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24rpx;
+	line-height: 34rpx;
+
+	color: #666666;
+	width: 100%;
+	/*以下内容是文字隐藏所必须的*/
+	display: -webkit-box;
+	word-break: break-all;
+	/*换行规则*/
+	text-overflow: ellipsis;
+	/*最后使用省略号显示*/
+	overflow: hidden;
+	/*超出部分隐藏*/
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	/*能够显示几行*/
+}
+
+.intro {
+	margin-top: 8rpx;
+	font-size: 28rpx;
+	color: #333333;
+
+}
+
+.sex {
+	margin-left: 20rpx;
+	height: 36rpx;
+	width: 36rpx;
+}
+
+.ziliao_border {
+	width: 100%;
+	margin-top: 40rpx;
+	height: 96rpx;
+	display: flex;
+	background-color: #fff;
+	flex-direction: row;
+	align-items: center;
+
+}
+
+.tip {
+	height: 10rpx;
+	width: 61%;
+	background-color: #fff;
+}
+
+.ziliao {
+	font-style: normal;
+	font-size: 28rpx;
+	margin-left: 36rpx;
+	/* identical to box height */
+
+
+	color: #303030;
+}
+
+.wirte {
+	font-size: 24rpx;
+	/* identical to box height, or 133% */
+	width: auto;
+	text-align: right;
+
+	color: #B6BDBD;
+}
+
+.right {
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 32rpx;
+}
+
+.top_bg {
+	height: 102rpx;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	padding-left: 50rpx;
+	position: fixed;
+	top: 0rpx;
+}
+
+.sex-picker {
+	/* width: 10rpx; */
+	height: fit-content;
+	background-color: #F6F6FB;
+	padding-bottom: 10rpx;
+}
+
+.tianc {
+	height: 102rpx;
+	width: 100%;
+	background-color: #fff;
+}
+
+.type_view {
+	width: fit-content;
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	background: #F6F6FB;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 24rpx;
+	line-height: 26rpx;
+	/* identical to box height, or 106% */
+
+	text-align: center;
+	/* background-color: blueviolet; */
+	color: #000000;
+
+}
+
+.title2 {
+	font-weight: 400;
+	font-size: 24rpx;
+	line-height: 26rpx;
+	/* identical to box height, or 106% */
+
+	text-align: center;
+
+	color: #000000;
+
+}
+
+.down {
+	width: 16rpx;
+	height: 12rpx;
+	margin-left: 15rpx;
+}
+
+.no1 {
+	position: absolute;
+	width: 60rpx;
+	height: 46rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.no2 {
+	position: absolute;
+	font-family: 'Orelega One';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28rpx;
+	text-align: center;
+	left: 10rpx;
+	color: #FFFFFF;
+}

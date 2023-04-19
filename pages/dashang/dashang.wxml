@@ -1,0 +1,67 @@
+<view class="wrapper">
+	<view class="item">
+		<image src="../../images/new/c_yinyue.png" class="pic" mode="aspectFit" />
+		<view class="content">
+			<text class="aiyou">哎呦，唱得不错哦!</text>
+			<text class="price">￥18.8</text>
+		</view>
+		<view bindtap="doPay" data-price="18.8" class="ds_view">
+			<text class="ds">打赏</text>
+		</view>
+	</view>
+	<view class="item">
+		<image src="../../images/new/c_aixin.png" class="pic" mode="aspectFit" />
+		<view class="content">
+			<text class="aiyou">如沐春风的感觉!</text>
+			<text class="price">￥36.6</text>
+		</view>
+		<view bindtap="doPay" data-price="36.6" class="ds_view">
+			<text class="ds">打赏</text>
+		</view>
+	</view>
+	<view class="item">
+		<image src="../../images/new/c_jiu.png" class="pic" mode="aspectFit" />
+		<view class="content">
+			<text class="aiyou">唱的太6了！忍不住想要点个赞!</text>
+			<text class="price">￥66.6</text>
+		</view>
+		<view bindtap="doPay" data-price="66.6" class="ds_view">
+			<text class="ds">打赏</text>
+		</view>
+	</view>
+	<view class="item">
+		<image src="../../images/new/c_jiezhi.png" class="pic" mode="aspectFit" />
+		<view class="content">
+			<text class="aiyou">唱到心坎里了，希望可以交个朋友!</text>
+			<text class="price">￥88.8</text>
+		</view>
+		<view bindtap="doPay" data-price="88.8" class="ds_view">
+			<text class="ds">打赏</text>
+		</view>
+	</view>
+	<view class="item">
+		<image src="../../images/new/c_hongbao.png" class="pic" mode="aspectFit" />
+		<view class="content">
+			<text class="price">其他金额</text>
+		</view>
+		<view bindtap="showWechatWindow" class="ds_view">
+			<text class="ds">打赏</text>
+		</view>
+	</view>
+</view>
+<!--查看微信的弹窗 -->
+<!-- 客人自己唱弹窗 -->
+<pop  isShow="{{showWechatWindow}}"contentStr="准备好了吗?" btnStr="确定" >
+	<view class="win_border">
+		<view class="w_top">
+			<text class="w_title">感谢您的打赏</text>
+			<image  bindtap="closeWechatDialog" class="del" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="w_view">
+			<input type="digit" bindinput="inputKRFee" value="{{price}}" class="userName" placeholder-class="userName-place" placeholder="请输入打赏金额" />
+		</view>
+		<view bindtap="doPay" data-price="{{price}}" class="but">
+			<text   class="sure">确认打赏{{price}}</text>
+		</view>
+	</view>
+</pop>

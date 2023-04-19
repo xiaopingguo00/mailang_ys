@@ -1,0 +1,75 @@
+@topShadow: 0 -10rpx 30rpx -10rpx rgba(100, 100, 100, 0.2);
+@bottomShadow: 0 10rpx 30rpx -10rpx rgba(100, 100, 100, 0.2);
+@avatarShadow: 0 0 30rpx 10rpx rgba(100, 100, 100, 0.2);
+@cardShadow: 0 0 30rpx rgba(100, 100, 100, 0.2), 0 10rpx 30rpx -10rpx rgba(100, 100, 100, 0.2);
+@swiperShadow: 0 40rpx 30rpx -20rpx rgba(0, 0, 0, 0.2);
+@buttonShadow: 0 0 20rpx rgba(38,186,148,0.2),0 10rpx 40rpx rgba(38,186,148,0.2);
+@buttonCardShadow: 0 0 20rpx rgba(100,100,100,0.2),0 10rpx 40rpx rgba(100,100,100,0.2);
+@buttonCancelShadow: 0 0 20rpx rgba(190,190,190,0.2),0 10rpx 40rpx rgba(190,190,190,0.2);
+@buttonBottomShadow: 0 10rpx 10rpx 0 rgba(96,125,139,0.25);
+
+.box-shadow(@shadow) {
+  box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+}
+
+.top-shadow() {
+  .box-shadow(@topShadow);
+}
+
+.bottom-shadow() {
+  .box-shadow(@bottomShadow);
+}
+
+.avatar-shadow() {
+  .box-shadow(@avatarShadow);
+}
+
+.card-shadow() {
+  .box-shadow(@cardShadow);
+}
+
+.swiper-shadow() {
+  .box-shadow(@swiperShadow);
+}
+
+.button-shadow() {
+  .box-shadow(@buttonShadow);
+}
+
+.button-card-shadow() {
+  .box-shadow(@buttonCardShadow);
+}
+
+.button-cancel-shadow() {
+  .box-shadow(@buttonCancelShadow);
+}
+
+.button-bottom-shadow() {
+  .box-shadow(@buttonBottomShadow);
+}
+
+.blur(@degree:10rpx) {
+  filter: blur(@degree);
+  -webkit-filter: blur(@degree);
+}
+
+.linear-gradient(@args) {
+  background: linear-gradient(@args);
+  background: -webkit-linear-gradient(@args);
+}
+
+.transition(@property:none;@duration:0.5s;@timing:ease;@delay:0) {
+  transition: @arguments;
+  -webkit-transition: @arguments;
+}
+
+.animation-abbr(@name:none;@duration:0.5s;@timing:ease;) {
+  animation: @arguments;
+  -webkit-animation: @arguments;
+}
+
+.animation(@name:none;@duration:0.5s;@timing:ease;@delay:0;@count:1;@direction:normal) {
+  animation: @arguments;
+  -webkit-animation: @arguments;
+}

@@ -1,0 +1,8 @@
+<view class='dialog__mask' wx:if='{{ show }}'>
+  <view class='dialog__content {{ className }}'>
+    <!-- <image src='/images/user/close.png' class='dialog__close' wx:if='{{ close }}'  bindtap='onDialogClose'>
+    </image> -->
+    <slot>
+    </slot>
+  </view>
+</view>

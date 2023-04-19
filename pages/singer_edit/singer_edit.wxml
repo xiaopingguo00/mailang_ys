@@ -1,0 +1,119 @@
+<view class="wrapper">
+	<view class="nickname_view" data-weui-theme="{{theme}}">
+		<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+			<image class="avatar" src="{{ avatarUrl }}"></image>
+		</button>
+	</view>
+	<text class="tip1">歌手照片(最多5张)</text>
+	<view class="pic_border">
+		<scroll-view scroll-x="{{true}}" style="width: 100%,height：100rpx">
+			<view wx:for="{{pics.length+1}}" wx:key="index" class="out">
+				<image wx:if="{{index!=pics.length}}" class="pic" src="{{pics[index]}}"></image>
+				<image wx:elif="{{index==pics.length}}" bindtap="addImage" class="pic" src="../../images/new/c_photo.png"></image>
+				<image wx:if="{{index!=pics.length}}" class="del" bindtap="delImage" data-index="{{index}}" src="../../images/new/del.png"></image>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="border" style="margin-top:40rpx;margin-bottom:22rpx"> </view>
+	<text class="tip1">歌手视频(最多5张)</text>
+	<view class="pic_border">
+		<scroll-view scroll-x="{{true}}" style="width: 100%,height：100rpx">
+			<view wx:for="{{videos.length+1}}" wx:key="index" class="out">
+				<video wx:if="{{index!=videos.length}}" play-btn-position="bottom" class="pic" src="{{videos[index]}}"></video>
+				<image wx:elif="{{index==videos.length}}" bindtap="addVideo" class="pic" src="../../images/new/c_shipin.png"></image>
+				<image wx:if="{{index!=videos.length}}" class="del" bindtap="delVideo" data-index="{{index}}" src="../../images/new/del.png"></image>
+				<image wx:if="{{index!=videos.length}}" class="play" src="../../images/new/c_play1.png"></image>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="border" style="margin-top:40rpx;"> </view>
+	<view class="userName-row">
+		<text class="tip1">昵称</text>
+		<input type="nickname" bindinput="inputName" value="{{nickname}}" class="userName" placeholder-class="userName-place" placeholder="请输入昵称" />
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">性别</text>
+		<picker class="sex-picker" bindchange="bindSexPickerChange" value="{{sexIndex}}" range="{{sexArray}}">
+			<view class="sex-text">
+				{{sexArray[sexIndex]}}
+			</view>
+		</picker>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">学校</text>
+		<input bindinput="inputSchool" value="{{school}}" placeholder="请输入" placeholder-class="userName-place" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">民族</text>
+		<input bindinput="inputMZ" value="{{mingzu}}" placeholder="请输入" placeholder-class="userName-place" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">擅长乐器</text>
+		<input bindinput="inputYQ" value="{{musical}}" placeholder="请输入" placeholder-class="userName-place" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">生日</text>
+		<picker class="sex-picker" mode="date" value="{{birthday}}" start="1980-01-01" end="2017-01-01" bindchange="bindDateChange">
+			<view class="	{{birthday==''||birthday==null?'sex-text2':'sex-text'}}">
+				{{birthday==""||birthday==null?'请选择日期':birthday}}
+			</view>
+		</picker>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">城市</text>
+		<picker class="{{region[0]!=''&& region[0]!=null?'sex-picker':'sex-picker2'}}" mode="region" bindchange="setHome" value="{{region}}" custom-item="{{customItem}}">
+			<view wx:if="{{region[0]!=''&& region[0]!=null}}" class="sex-text">{{region[0]}}{{region[1]}}</view>
+			<view wx:if="{{region[0]==''|| region[0]==null}}" class="sex-text2">请选择</view>
+		</picker>
+	</view>
+	<view class="border"> </view>
+	<!-- <view class="wrapper2">
+      <text class="tip1">手机号</text>
+      <image class="phone" bindtap="switchPhone" data-value="{{showPhone}}" src="{{showPhone?'../../images/new/close.png':'../../images/new/open.png'}}"></image>
+      <input bindinput="inputPhone" value="{{phone}}" placeholder="请输入" placeholder-class="userName-place" class="userName"></input>
+    </view>
+    <view class="border"> </view> -->
+	<view class="wrapper2">
+		<text class="tip1">微信号</text>
+		<!-- <image class="phone" bindtap="switchWechat" data-value="{{showWechat}}" src="{{showWechat?'../../images/new/close.png':'../../images/new/open.png'}}"></image> -->
+		<input bindinput="inputWechat" name="wechat" placeholder="请输入" placeholder-class="userName-place" value="{{wechat}}" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">查看联系方式价格</text>
+		<input type="digit" bindinput="inputPrice" name="price" placeholder="请输入" placeholder-class="userName-place" value="{{phonePrice}}" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper3" style="margin-top: 30rpx;">
+		<text class="tip1" style="margin-bottom: 10rpx;">一句话介绍自己</text>
+		<view class="text_border">
+			<input type="text" bindinput="inputProfile" name="profile" placeholder="请输入" placeholder-class="userName-place" value="{{profile}}" class="intro"></input>
+		</view>
+	</view>
+	<view class="wrapper3">
+		<text class="tip1" style="margin-top:30rpx;margin-bottom:20rpx">歌手简介</text>
+		<view class="text_border2">
+			<input type="text" bindinput="inputIntroduce" name="introduce" placeholder="请输入" placeholder-class="userName-place" value="{{introduce}}" class="intro"></input>
+		</view>
+	</view>
+	<view class="wrapper2">
+		<text class="tip1">歌手商演展示</text>
+		<image class="phone" data-zhi="{{showSy}}" bindtap="switchSY" src="{{showSy==1?'../../images/new/open.png':'../../images/new/close.png'}}"></image>
+	</view>
+	<view class="bottom_wrapper" style="margin-right:30rpx;margin-bottom: 50rpx;">
+		<view bindtap="savedata" class="bottom_view" style="margin-top:20rpx">
+			<text class="open2">保存</text>
+		</view>
+	</view>
+	<view bindtap="qiehuan" class="qiehuan">
+		<text class="zhuxiao">
+			切换角色 ->
+		</text>
+	</view>
+</view>

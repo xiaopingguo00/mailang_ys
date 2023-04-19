@@ -1,0 +1,36 @@
+<view class="wrapper">
+	<view class="wrapper2">
+		<text class="tip1">歌曲名称</text>
+		<input bindinput="inputName" name="userNickname" placeholder="请输入" placeholder-class="userName-place" value="{{name}}" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">歌手名</text>
+		<input bindinput="inputSingerName" name="userNickname" placeholder="请输入" placeholder-class="userName-place" value="{{singerName}}" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">推荐值(1-100)</text>
+		<input bindinput="inputSortNum" name="userNickname" type="number" placeholder="请输入" placeholder-class="userName-place" value="{{sortnum}}" class="userName"></input>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">曲风</text>
+		<picker class="sex-picker" bindchange="bindSexPickerChange" value="{{qfIndex}}" range="{{qufengs}}">
+			<view class="{{songClass==''?'sex-text':'sex-text2'}}">
+				{{songClass==""?'请选择':songClass}}
+			</view>
+		</picker>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">是否原创</text>
+		<image bindtap="openYC" class="phone" src="{{songType==1?'../../images/new/open.png':'../../images/new/close.png'}} "></image>
+		<view style="flex:1"></view>
+		<text class="tip1">是否上架</text>
+		<image class="phone" bindtap="openSJ" style="margin-right:40rpx" src="{{status==1?'../../images/new/close.png':'../../images/new/open.png'}}"></image>
+	</view>
+	<view bindtap="saveData" class="bottom_view2" style="margin-top:80rpx">
+		<text class="open2">保存</text>
+	</view>
+</view>

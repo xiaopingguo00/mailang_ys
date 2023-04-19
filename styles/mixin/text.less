@@ -1,0 +1,46 @@
+@import "../variable/color.less";
+
+.font-size(@fontSize;@lineHeight) {
+  font-size: @fontSize;
+  line-height: @lineHeight;
+}
+
+.title(@color:@colorTitle) {
+  font-weight: 700;
+  color: @color;
+}
+
+.plain-text(@color:@colorPlainText) {
+  color: @color;
+}
+
+.help-text(@color:@colorHelpText) {
+  color: @color;
+}
+
+.button-text(@color:@colorButton) {
+  color: @color;
+}
+
+.break-word() {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.child-name() {
+  height: 60rpx;
+  .font-size(35rpx;60rpx);
+  .title();
+}
+
+.child-detail {
+  height: 40rpx;
+  .font-size(25rpx;40rpx);
+  .plain-text();
+}

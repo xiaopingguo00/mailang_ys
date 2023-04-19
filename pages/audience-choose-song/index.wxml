@@ -1,0 +1,182 @@
+<view class="wrapper2">
+	<view class="top_bg">
+		<swiper indicator-dots='{{true}}' autoplay='true' class='top_bg'>
+			<block wx:for='{{pics}}' wx:key='index'>
+				<swiper-item>
+					<image mode='scaleToFill' class='fs_bannerClass' mode="aspectFill" src='{{item}}' bindtap='bannerDetail'>
+					</image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="middle_view">
+		<view class="intro_view">
+			<view class="name_view">
+				<text class="name">{{singer.userNickname}}</text>
+				<text bindtap="moreInfo" class="more">更多资料</text>
+			</view>
+			<text class="intro">{{singer.words!=""?singer.words:'他还没有介绍自己'}} </text>
+			<view class="address_view">
+				<image class="sex" src="../../images/new/c_female.png"></image>
+				<text class="address">{{singer.userProvince}}{{singer.userCity}}</text>
+			</view>
+			<view class="address_view">
+				<image class="sex" src="../../images/new/c_phone.png"></image>
+				<text wx:if="{{	hasPayForPhone==false}}" class="address">{{singer.phone!=null?phonestr+'******':'暂无'}}</text>
+				<text wx:if="{{	hasPayForPhone}}" class="address">{{singer.phone!=null?singer.phone:'暂无'}}</text>
+				<text wx:if="{{singer.phone!=null&&singer.phone!=''&&hasPayForPhone==false}}" bindtap="showPhoneWindow" class="look">查看联系方式</text>
+			</view>
+			<view class="address_view">
+				<image class="sex" src="../../images/new/c_wechat.png"></image>
+				<text wx:if="{{	hasPayForWechat==false}}" class="address">{{singer.wechat!=null&&singer.wechat!=''?'WX:******':'暂无'}}</text>
+				<text wx:if="{{	hasPayForWechat}}" class="address">{{singer.wechat!=null&&singer.wechat!=''?'WX:'+singer.wechat:'暂无'}}</text>
+				<text wx:if="{{singer.wechat!=null&&singer.wechat!=''&&hasPayForWechat==false}}" bindtap="showWechatWindow" class="look">查看微信</text>
+			</view>
+		</view>
+		<view class="tip_view">
+			<view class="name_view">
+				<text class="gequ">点歌目录</text>
+				<text class="fee">({{singer.price}}元/每首)</text>
+				<!-- <text bindtap="showGD" class="more">放大歌单</text> -->
+			</view>
+		</view>
+		<view bindtap="openSX" class="shaixuan1">
+			<view class="sex-text">
+				{{sxType==""?'全部':sxType}}
+			</view>
+			<image class="pic2" src="../../images/new/down.png"></image>
+		</view>
+
+		<view class="songs" style="height:{{screenHeight}};">
+			<scroll-view scroll-y="true" style="height: {{screenHeight}}rpx">
+				<block wx:for="{{dataList}}">
+					<view class="row2">
+						<text class="index">{{index+1}}</text>
+						<view class="col1">
+							<view class="row3">
+								<text class="text0">{{item.name}}</text>
+							</view>
+							<view class="row3" style="margin-top: 5rpx;">
+								<text class="text4">{{item.singerName}}</text>
+								<view wx:if="{{item.songType==1}}" class="state1">
+									<text class="text1">原创</text>
+								</view>
+								<view class="state2" style="margin-left:20rpx">
+									<text class="text2">点歌次数{{item.choosenum}}</text>
+								</view>
+								<view class="state3" style="margin-left:20rpx">
+									<text class="text3">{{item.songClass}}</text>
+								</view>
+							</view>
+						</view>
+						<view bindtap="showDGWindow" data-songname="{{item.name}}" data-songid="{{item.id}}" class="diange_view">
+							<text class="diange">点歌</text>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+		<view wx:if="{{showShaiXuan}}" class="sx_win">
+			<block wx:for="{{qufengs}}">
+				<view bindtap="chooseType" data-type="{{item}}" class="qufeng">
+					<text class="qufengt">{{item}}</text>
+				</view>
+
+			</block>
+		</view>
+	</view>
+	<view class="bottom_view2">
+		<view bindtap="dashang" class="dashang_view">
+			<image class="pic3" src="../../images/new/c_licai.png"></image>
+			<text class="das">打赏歌手</text>
+		</view>
+		<view bindtap="showKeRenWindow" class="zijilai"> <text class="zj">我要自己唱</text> </view>
+	</view>
+</view>
+<!--查看手机的弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showPhoneWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="phone_pop_view2">
+		<view class="phone_top_view">
+			<text class="phone_title">查看联系方式</text>
+			<image bindtap="closePhoneDialog" class="phone_close" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="line"></view>
+		<text class="phone_pay">查看歌手手机号需支付 {{singer.phonePrice}} 元~</text>
+		<button formType="submit" bindtap="payForContact" data-type="phone" class="zhifu">去支付￥{{singer.phonePrice}}</button>
+	</view>
+</pop>
+<!--查看微信的弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showWechatWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="phone_pop_view2">
+		<view class="phone_top_view">
+			<text class="phone_title">查看微信</text>
+			<image bindtap="closeWechatDialog" class="phone_close" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="line"></view>
+		<text class="phone_pay">查看歌手微信需支付 {{singer.phonePrice}} 元~</text>
+		<button formType="submit" bindtap="payForContact" data-type="wechat" class="zhifu">去支付￥{{singer.phonePrice}}</button>
+	</view>
+</pop>
+
+<!-- 客人自己唱弹窗 -->
+<pop isShow="{{showKRWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="win_border">
+		<view class="w_top">
+			<text class="w_title">客人演唱</text>
+			<image bindtap="closeWidow" class="del" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="w_view">
+			<input type="text" bindinput="inputKeRenSong" value="{{kerenSong}}" class="userName" placeholder-class="userName-place" placeholder="请输入演唱歌曲" />
+		</view>
+		<view bindtap="kerenPay" data-songname="{{kerenSong}}" class="but">
+			<text  class="sure">支付{{singer.visitorPrice}}</text>
+		</view>
+	</view>
+</pop>
+
+
+
+<!-- 放大版歌单 -->
+<pop isShow="{{bigGD}}" contentStr="" btnStr="">
+	<view class="big_border">
+		<view class="big_border" >
+			<scroll-view scroll-y="true" style="flex:2">
+				<block wx:for="{{dataList}}">
+					<view class="row2">
+						<text class="index">{{index+1}}</text>
+						<view class="col1">
+							<view class="row3">
+								<text class="text0">{{item.name}}</text>
+							</view>
+							<view class="row3" style="margin-top: 5rpx;">
+								<text class="text4">{{item.singerName}}</text>
+								<view wx:if="{{item.songType==1}}" class="state1">
+									<text class="text1">原创</text>
+								</view>
+								<view class="state2" style="margin-left:20rpx">
+									<text class="text2">点歌次数{{item.choosenum}}</text>
+								</view>
+								<view class="state3" style="margin-left:20rpx">
+									<text class="text3">{{item.songClass}}</text>
+								</view>
+							</view>
+						</view>
+						<view bindtap="showDGWindow" data-songname="{{item.name}}" data-songid="{{item.id}}" class="diange_view">
+							<text class="diange">点歌</text>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+</pop>
+<!-- 点歌弹窗 -->
+<pop isShow="{{showDGWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="dg_border">
+		<image src="/images/new/dg_bg.png" mode="aspectFit" class="dg_bg" />
+		<textarea value="{{zhufu}}" bindinput="inputZhufu" maxlength="50" placeholder="请输入祝福语或留言" class="zhufu" />
+		<view bindtap="diangePay" class="diange_sure">
+			<text class="dg_pay">￥{{singer.price}}点歌支付</text>
+		</view>
+	</view>
+</pop>

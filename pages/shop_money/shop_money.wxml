@@ -1,0 +1,112 @@
+<view class="wrapper">
+	<view class="pic_border">
+	</view>
+	<view class="title">
+		<image bindtap="back" class="left" src="../../images/new/left.png"></image>
+		<text class="title_text">我的收益</text>
+	</view>
+	<view class="top2_row">
+		<view class="col1">
+			<text class="des">今日收益</text>
+			<text class="money">￥{{todayMoney}}</text>
+		</view>
+		<view class="col1">
+			<text class="des">总收益</text>
+			<text class="money">￥{{totalMoney}}</text>
+		</view>
+	</view>
+	<view bindtap="showTXWin" class="border">
+		<image class="icon" src="../../images/new/c_red.png"></image>
+		<text class="tip1">可提现金额</text>
+		<text class="tip2">￥{{ketixianMoney}}</text>
+		<image class="right2" src="../../images/new/right.png"></image>
+	</view>
+	<!-- <view bindtap="showDGWin" class="border2">
+		<image class="icon" src="../../images/new/c_music.png"></image>
+		<text class="tip1">当前点歌</text>
+		<text wx:if="{{currentDGFee!=''&&currentDGFee!=null}}" class="tip2">{{currentDGFee}}</text>
+		<text class="tip3">{{currentDGFee==""||currentDGFee==null?'请设置点歌价格':'元/首'}}</text>
+		<image class="right2" src="../../images/new/right.png"></image>
+	</view> -->
+	<view bindtap="showKRWin" class="border2">
+		<image class="icon" src="../../images/new/fc.png"></image>
+		<text class="tip1">设置收益分成</text>
+		<text wx:if="{{sss!=''&&sss!=null}}" class="tip4">商家分成比例{{100-sss}}</text>
+		<text wx:else class="tip2">点击设置</text>
+		<image class="right2" src="../../images/new/right.png"></image>
+	</view>
+	<view bindtap="toDetail" class="border2">
+		<image class="icon" src="../../images/new/c_note.png"></image>
+		<text class="tip1">收益明细列表</text>
+		<text class="tip2"></text>
+		<image class="right2" src="../../images/new/right.png"></image>
+	</view>
+
+</view>
+<!-- 点歌费用设置弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showDGFee}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="win_border">
+		<view class="w_top">
+			<text class="w_title">当前点歌</text>
+			<image class="del" bindtap="closeWidow" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="w_view">
+			<input type="digit" bindinput="inputDGFee" value="{{currentDGFee}}" class="userName" placeholder-class="userName-place" placeholder="请设置当前点歌单首价格" />
+		</view>
+		<view catchtap="submitDGFee" class="but">
+			<text class="sure">确认</text>
+		</view>
+	</view>
+</pop>
+<!-- 收益分成弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showFCFee}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="win_border2">
+		<view class="w_top">
+			<text class="w_title">设置收益分成</text>
+			<image bindtap="closeWidow" class="del" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="w_view2">
+			<input type="digit" bindinput="inputKRFee" value="{{singerPercent0}}" class="userName2" placeholder-class="userName-place" placeholder="请设置商家收益分成" />
+			<text class="baifen">%</text><text class="sy">歌手收益</text>
+		</view>
+		<view class="w_view2" style="margin-top: 20rpx;">
+			<text class="baifen1">{{100-singerPercent0}}</text>
+			<text class="baifen">%</text>
+			<text class="sy" style="margin-right: 50rpx;">商家收益</text>
+		</view>
+		<view catchtap="submitFCFee" class="but2">
+			<text class="sure">确认</text>
+		</view>
+	</view>
+</pop>
+<!-- 提现费用弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showTXFee}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="win_border3">
+		<view class="w_top">
+			<text class="w_title">提现</text>
+			<image class="del" bindtap="closeWidow" src="../../images/new/sc.png"></image>
+		</view>
+		<text class="w_title2">因腾讯官方限制，单次最多提现500元</text>
+		<view class="w_view" style="margin-top: 10rpx;">
+			<input type="digit" bindinput="inputTXFee" value="{{tixianFee}}" class="userName" placeholder-class="userName-place" placeholder="请输入提现金额" />
+		</view>
+		<view catchtap="submitTXFee" class="but">
+			<text class="sure">确认提现</text>
+		</view>
+	</view>
+</pop>
+<!-- 提示绑定手机号 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showPhoneWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="win_border2">
+		<view class="w_top">
+			<text class="w_title">你尚未绑定手机</text>
+			<image bindtap="closeWidow" class="del" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="w_view3">
+			<input type="number" bindinput="inputPhone" value="{{phone}}" class="userName3" placeholder-class="userName-place" placeholder="请输入手机号" />
+		</view>
+		<view bindtap="submitPhone" class="but2">
+			<text class="sure">绑定手机</text>
+		</view>
+	</view>
+</pop>

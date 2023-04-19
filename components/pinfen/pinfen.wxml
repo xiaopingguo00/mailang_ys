@@ -1,0 +1,6 @@
+<view class="star_wrapper star_wrapper_{{starSize}}">
+	<view wx:for="{{star}}" wx:key="index" data-index="{{item.id}}" data-gradable="{{gradable}}" tapSwitch="{{tapSwitch}}" bindtap="grade">
+		<image src="{{item.id > score ? defaultSrc : activeSrc}}"></image>
+	</view>
+	<!-- <view class="score">{{score}}</view> -->
+</view> 

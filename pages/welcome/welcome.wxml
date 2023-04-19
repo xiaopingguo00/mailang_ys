@@ -1,0 +1,50 @@
+  <view>
+    <view class="welcome-container">
+      <view class="welcome-title">
+        <span>欢迎来到
+        </span>
+        <span>
+          小麦点歌平台
+        </span>
+      </view>
+      <view class="welcome-sub-title">
+        <span>
+          请选择你的角色，点击进入
+        </span>
+
+      </view>
+      <view class="welcome-swiper">
+        <view class="welcome-swiper-role">
+          <image src="../../images/new/BeerJug26.png"
+            class="{{currentRole == 'bussiness' ? 'big_pic' : 'small_pic'}}" bindtap="clickImage"
+            data-name="bussiness">
+          </image>
+          <text>商家</text>
+
+        </view>
+        <view class="welcome-swiper-role">
+          <image src="../../images/new/Audience.png"
+            class="{{currentRole == 'audience' ? 'big_pic' : 'small_pic'}}" bindtap="clickImage"
+            data-name="audience">
+          </image>
+
+          <text>观众</text>
+        </view>
+        <view class="welcome-swiper-role">
+          <image src="../../images/new/VintageMicrophone46.png"
+            class="{{currentRole == 'singer' ? 'big_pic' : 'small_pic'}}" bindtap="clickImage"
+            data-name="singer">
+          </image>
+          <text>歌手</text>
+
+        </view>
+      </view>
+      <view hidden="{{!shouquanFlag}}" style="margin-top:40rpx;margin-bottom:40rpx;">为不影响小程序功能使用，请先授权再进入小程序</view>
+      <button hidden="{{!shouquanFlag}}" open-type='getUserInfo' class="shouquan" bindtap="getUnionId">获取授权</button>
+      <view class="welcome-confirm">
+        <button disabled="{{shouquanFlag}}" type="primary" bindtap="toHome">进入</button>
+      </view>
+    </view>
+
+  </view>
+

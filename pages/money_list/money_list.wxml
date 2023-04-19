@@ -1,0 +1,38 @@
+<view class="wrapper">
+    <view class="shaixuan">
+      <view class="shaixuan1">
+        <image class="pic1" src="../../images/new/sx.png"></image>
+        <picker class="date-picker" mode="date" value="{{createDate}}" start="2015-09-01" end="2025-09-01" bindchange="bindDateChange">
+          <view class="sex-text">
+            {{createDate==""?'日期筛选':createDate}}
+          </view>
+        </picker>
+      </view>
+      <!-- <view class="shaixuan1">
+        <view class="sex-text">
+          全部
+        </view>
+        <image class="pic2" src="../../images/new/down.png"></image>
+      </view> -->
+    </view>
+    <view style="margin-top:24rpx"></view>
+    <block wx:for="{{datas}}">
+      <view class="view1">
+        <view class="row1">
+          <text class="text1">{{item.addorderUserName}}</text>
+          <text class="text1" style="margin-left:20rpx;margin-right:20rpx">丨</text>
+          <text class="text1">{{item.songName!=null?item.songName:''}}</text>
+					<view style="flex:2">
+						
+					</view>
+					<text class="text1" style="margin-right: 50rpx; color:rgb(45, 185, 40);">{{item.remark}}</text>
+        </view>
+        <view class="row2" style="margin-top:14rpx">
+          <text class="text1">日期：{{item.createDateStr}}</text>
+          <view style="flex:1"></view>
+          <text class="text1">收益金额</text>
+          <text class="text3">￥{{item.cashAmount}}</text>
+        </view>
+      </view>
+    </block>
+  </view>

@@ -1,0 +1,95 @@
+<view class="wrapper2">
+	<scroll-view class="scroll" scroll-y="true">
+		<view class="top_bg">
+			<!-- <image class="bg" src="../../images/new/renwu.png"></image> -->
+			<swiper indicator-dots='{{true}}' autoplay='true' class='fs_swipperClass'>
+				<block wx:for='{{pics}}' wx:key='index'>
+					<swiper-item>
+						<image mode='scaleToFill' class='fs_bannerClass' mode="aspectFill" src='{{item}}' bindtap='bannerDetail'>
+						</image>
+					</swiper-item>
+				</block>
+			</swiper>
+
+			<view class="name_view">
+				<text class="name">{{singer.userNickname}}</text>
+				<image wx:if="{{singer.userSex != null}}" class="sex" src="{{singer.userSex==1?'../../images/new/c_male.png':'../../images/new/c_female.png'}}"></image>
+			</view>
+		</view>
+		<view class="middle_view">
+			<view class="intro_view">
+				<text class="tip">基本信息</text>
+				<view class="address_view">
+					<text class="key">歌手：</text>
+					<text class="value">{{singer.userNickname!=null?singer.userNickname:''}}</text>
+				</view>
+				<view class="address_view">
+					<text class="key">性别：</text>
+					<text class="value">{{singer.userSex==null?'暂无':singer.userSex==1?'男':'女'}}</text>
+				</view>
+				<view class="address_view">
+					<text class="key">生日：</text>
+					<text class="value">{{singer.birthday!=null?singer.birthday:''}}</text>
+				</view>
+				<view class="address_view">
+					<text class="key">民族：</text>
+					<text class="value">{{singer.nations!=null?singer.nations:''}}</text>
+				</view>
+				<view class="address_view">
+					<text class="key">地区：</text>
+					<text class="value">{{singer.userProvince!=null?singer.userProvince:''}}{{singer.userCity!=null?singer.userCity:''}}</text>
+				</view>
+				<text class="tip" style="margin-top:30rpx">歌手简介</text>
+				<text class="intro">{{singer.userIntroduction!=null?singer.userIntroduction:''}} </text>
+				<text class="tip" style="margin-top:30rpx">联系方式</text>
+				<view class="address_view">
+					<image class="sex" src="../../images/new/c_phone.png"></image>
+					<text wx:if="{{	hasPayForPhone==false}}" class="address">{{singer.phone!=null?phonestr+'******':'暂无'}}</text>
+					<text wx:if="{{	hasPayForPhone}}" class="address">{{singer.phone!=null?singer.phone:'暂无'}}</text>
+					<text wx:if="{{singer.phone!=null&&singer.phone!=''&&hasPayForPhone==false}}" bindtap="showPhoneWindow" class="look">查看联系方式</text>
+				</view>
+				<view class="address_view">
+					<image class="sex" src="../../images/new/c_wechat.png"></image>
+					<text wx:if="{{	hasPayForWechat==false}}" class="address">{{singer.wechat!=null&&singer.wechat!=''?'WX:******':'暂无'}}</text>
+					<text wx:if="{{	hasPayForWechat}}" class="address">{{singer.wechat!=null&&singer.wechat!=''?'WX：'+singer.wechat:'暂无'}}</text>
+					<text wx:if="{{singer.wechat!=null&&singer.wechat!=''&&hasPayForWechat==false}}" bindtap="showWechatWindow" class="look">查看微信</text>
+				</view>
+				<text class="tip" style="margin-top:30rpx;margin-bottom: 30rpx;">歌手视频</text>
+				<block wx:for="{{videos}}">
+					<view class="video1">
+						<video object-fit="cover" class="video1" src="{{item}}"></video>
+					</view>
+				</block>
+				<view class="video2">
+
+				</view>
+			</view>
+
+		</view>
+	</scroll-view>
+</view>
+
+<!--查看手机的弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showPhoneWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="phone_pop_view2">
+		<view class="phone_top_view">
+			<text class="phone_title">查看联系方式</text>
+			<image bindtap="closePhoneDialog" class="phone_close" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="line"></view>
+		<text class="phone_pay">查看歌手手机号需支付 {{singer.phonePrice}} 元~</text>
+		<button formType="submit" bindtap="payForContact" data-type="phone" class="zhifu">去支付￥{{singer.phonePrice}}</button>
+	</view>
+</pop>
+<!--查看微信的弹窗 -->
+<pop bind:clickDialog="clickDialog" isShow="{{showWechatWindow}}" contentStr="准备好了吗?" btnStr="确定">
+	<view class="phone_pop_view2">
+		<view class="phone_top_view">
+			<text class="phone_title">查看微信</text>
+			<image bindtap="closeWechatDialog" class="phone_close" src="../../images/new/sc.png"></image>
+		</view>
+		<view class="line"></view>
+		<text class="phone_pay">查看歌手微信需支付 {{singer.phonePrice}} 元~</text>
+		<button formType="submit" bindtap="payForContact" data-type="wechat" class="zhifu">去支付￥{{singer.phonePrice}}</button>
+	</view>
+</pop>

@@ -1,0 +1,165 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": false,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"useMultiFrameRuntime": true,
+		"useApiHook": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enableEngineNative": false,
+		"bundle": false,
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"userConfirmedBundleSwitch": false,
+		"packNpmManually": false,
+		"packNpmRelationList": [],
+		"minifyWXSS": true,
+		"condition": false,
+		"ignoreUploadUnusedFiles": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.14.0",
+	"appid": "wx9d5ba9d4c7808f1c",
+	"projectname": "shop_project",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"plugin": {
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"list": []
+		},
+		"miniprogram": {
+			"list": [
+				{
+					"name": "pages/part2/wuliu_detail/wuliu_detail",
+					"pathName": "pages/part2/wuliu_detail/wuliu_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/part2/add_ziliao/add_ziliao",
+					"pathName": "pages/part2/add_ziliao/add_ziliao",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/classify/classify",
+					"pathName": "pages/classify/classify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/groupshop/groupshop",
+					"pathName": "pages/groupshop/groupshop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/part2/tuikuan/tuikuan",
+					"pathName": "pages/part2/tuikuan/tuikuan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/part2/addComment/addComment",
+					"pathName": "pages/part2/addComment/addComment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/part2/my_order/my_order",
+					"pathName": "pages/part2/my_order/my_order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/groupaccount/index",
+					"pathName": "pages/groupaccount/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/groupearnings/index",
+					"pathName": "pages/groupearnings/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/addgroupshop/index",
+					"pathName": "pages/addgroupshop/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/seckill/index",
+					"pathName": "pages/seckill/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/shopcart/shopcart",
+					"pathName": "pages/shopcart/shopcart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/withdrawdeposit/index",
+					"pathName": "pages/withdrawdeposit/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/confirmorder/index",
+					"pathName": "pages/confirmorder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/addgroupshop/index",
+					"pathName": "pages/addgroupshop/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"name": "pages/product/detail",
+					"pathName": "pages/product/detail",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	},
+	"editorSetting": {
+		"tabIndent": "tab",
+		"tabSize": 2
+	}
+}

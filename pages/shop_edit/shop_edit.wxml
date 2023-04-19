@@ -1,0 +1,36 @@
+<view class="wrapper">
+	<!-- <view class="nickname_view" data-weui-theme="{{theme}}">
+		<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+			<image class="avatar" src="{{ avatarUrl!=''?avatarUrl:'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0' }}"></image>
+		</button>
+	</view>
+	<view class="border" style="margin-top:10rpx;"> </view> -->
+	<view class="userName-row">
+		<text class="tip1">店名</text>
+		<input type="nickname" bindinput="inputName" value="{{nickname}}" class="userName" placeholder-class="userName-place" placeholder="请输入昵称" />
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">城市</text>
+		<picker class="sex-picker" mode="region" bindchange="setHome" value="{{region}}" custom-item="{{customItem}}">
+			<view wx:if="{{region[0]==''||region[0]==0}}" class="sex-text2">请选择城市</view>
+			<view wx:else class="sex-text">{{region[0]}}{{region[1]}}</view>
+		</picker>
+	</view>
+	<view class="border"> </view>
+	<view class="wrapper2">
+		<text class="tip1">店铺地址</text>
+		<input bindinput="inputUserAddress" value="{{userAddress}}" placeholder="请输入" placeholder-class="userName-place" class="userName"></input>
+	</view>
+	<view class="bottom_wrapper" style="margin-right:30rpx">
+		<view bindtap="savedata" class="bottom_view" style="margin-top:20rpx">
+			<text class="open2">保存</text>
+		</view>
+	</view>
+	<view bindtap="qiehuan" class="qiehuan">
+		<text class="zhuxiao">
+			切换角色 ->
+		</text>
+	</view>
+
+</view>

@@ -1,0 +1,34 @@
+.dialog__mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    border-radius: 20rpx;
+}
+.a1{
+    border-radius: 20rpx;
+}
+.dialog__content {
+    position: relative;
+    background: #fff;
+   
+    /* transform: scale(0.1); */
+}
+
+.dialog__close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58rpx;
+    height: 58rpx;
+    bottom: -110rpx;
+    left: 50%;
+    margin-left: -29rpx;
+}

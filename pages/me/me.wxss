@@ -1,0 +1,211 @@
+page {
+	background-color: '#fff';
+}
+
+.wrapper {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+}
+
+.top-border {
+	display: flex;
+	width: 100%;
+	background-color: #fff;
+	height: 450rpx;
+	color: aquamarine;
+	flex-direction: column;
+	align-items: center;
+}
+
+.code {
+	width: 112rpx;
+	margin-left: 20rpx;
+	height: 112rpx;
+	border-radius: 50%;
+}
+
+.top_border_col1 {
+	height: 214rpx;
+	width: 100%;
+	display: flex;
+	padding-left: 20rpx;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.top_border_col2 {
+	height: 128rpx;
+	width: 98%;
+	margin-top: 20rpx;
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: center;
+}
+
+.vip_inner {
+	height: 128rpx;
+	width: 98%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: absolute;
+	justify-content: center;
+}
+
+.youxaioqi {
+	flex: 1;
+	width: 322rpx;
+	height: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFang SC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 38rpx;
+}
+.youxaioqi2 {
+	flex: 1;
+	margin-left: 30rpx;
+	width: 322rpx;
+	height: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFang SC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 38rpx;
+}
+.bg1 {
+	height: 128rpx;
+	width: 98%;
+}
+
+.hg {
+	height: 31rpx;
+	margin-left: 30rpx;
+	margin-right: 20rpx;
+	width: 31rpx;
+}
+
+.open {
+	width: 168rpx;
+	height: 56rpx;
+	background-color: #CDAC8D;
+	display: flex;
+	align-items: center;
+	justify-content: center;margin-right: 32rpx;
+	border-radius: 28rpx;
+}
+
+.open1 {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28rpx;
+	/* identical to box height, or 143% */
+
+
+	color: #373535;
+}
+
+.right_col {
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+}
+
+.name_row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.name {
+	font-size: 40rpx;
+	color: #000000;
+}
+
+.xz {
+	width: fit-content;
+	height: fit-content;
+	padding: 4rpx 8rpx;
+	display: flex;
+	background-color: #FF6619;
+	align-items: center;
+	justify-content: center;
+}
+
+.diqu {
+	width: fit-content;
+	height: fit-content;
+	padding: 4rpx 8rpx;
+	display: flex;
+	/* margin-left: 24rpx; */
+	background-color: #518EFF;
+	margin-top: 8rpx;
+	align-items: center;
+	justify-content: center;
+}
+
+.xz1 {
+	font-size: 22rpx;
+	color: #FFFFFF;
+}
+
+.intro {
+	margin-top: 14rpx;
+	font-size: 28rpx;
+	color: #969699;
+
+}
+
+.sex {
+	margin-left: 20rpx;
+	height: 36rpx;
+	width: 36rpx;
+}
+
+.ziliao_border {
+	width: 100%;
+	margin-top: 40rpx;
+	height: 96rpx;
+	display: flex;
+	background-color: #fff;
+	flex-direction: row;
+	align-items: center;
+
+}
+
+.tip {
+	height: 10rpx;
+	width: 61%;
+	background-color: #fff;
+}
+
+.ziliao {
+	font-style: normal;
+	font-size: 28rpx;
+	margin-left: 36rpx;
+	/* identical to box height */
+
+
+	color: #303030;
+}
+
+.wirte {
+	font-size: 24rpx;
+	/* identical to box height, or 133% */
+	width: auto;
+	text-align: right;
+
+	color: #B6BDBD;
+}
+
+.right {
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 32rpx;
+}

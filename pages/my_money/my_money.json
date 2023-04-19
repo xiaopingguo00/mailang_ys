@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"pop": "/components/pop/pop",
+		"dialog": "/components/dialog/dialog"
+	},
+	"navigationStyle": "custom"
+}

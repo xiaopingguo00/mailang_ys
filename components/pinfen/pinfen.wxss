@@ -1,0 +1,41 @@
+view {
+    box-sizing: border-box;
+}
+image{
+    width: 50rpx;
+    height: 50rpx;
+}
+/* 注意组件的宽度，默认横向撑开整个容器 */
+.star_wrapper {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+.score{
+    width: fit-content;
+height: 28rpx;
+font-size: 20rpx;
+font-family: PingFangSC-Regular, PingFang SC;
+font-weight: 400;
+color: #FFC300;
+line-height: 28rpx;
+margin-left: 10rpx;
+margin-bottom: 0rpx;
+    }
+.star_wrapper_normal image {
+    width: 38rpx;
+    height: 36rpx;
+}
+
+.star_wrapper_large image {
+    width: 52rpx;
+    height: 50rpx;
+}
+
+.star_wrapper_small image {
+    width: 21rpx;
+    height: 20rpx;
+}
